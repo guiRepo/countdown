@@ -1,4 +1,8 @@
+const daysContainer = document.querySelector('#days')
+const hoursContainer = document.querySelector('#hours')
+const minutesContainer = document.querySelector('#minutes')
 const secondsContainer = document.querySelector('#seconds')
+
 
 
 const nextYear = new Date().getFullYear() + 1
@@ -14,6 +18,11 @@ const updateCountdown = () => {
     const minutes = Math.floor(difference / 1000 / 60) % 60
     const seconds = Math.floor(difference / 1000) % 60
 
+    daysContainer.textContent = days < 10 ? '0' + days : days 
+    hoursContainer.textContent = hours < 10 ? '0' + hours : hours
+    minutesContainer.textContent = minutes < 10 ? '0' + minutes : minutes
+    secondsContainer.textContent = seconds < 10 ? '0' + seconds : seconds
+    
 
     console.log({days, hours, minutes, seconds})
 
